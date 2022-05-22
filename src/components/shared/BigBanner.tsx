@@ -6,7 +6,7 @@ interface Props {}
 const BigBanner: FunctionComponent<Props> = ({}) => {
   return (
     <Box
-      width="100vw"
+      width="100%"
       height="100vh"
       position="relative"
       display="flex"
@@ -24,7 +24,7 @@ const BigBanner: FunctionComponent<Props> = ({}) => {
         <Typography variant="h3" marginBottom="1rem">
           Sad Gorilla
         </Typography>
-        <Typography marginBottom="1rem">A GANG OF HANGRY HIPPO NFTs</Typography>
+        <Typography marginBottom="2rem">A GANG OF HANGRY HIPPO NFTs</Typography>
         <Button variant="contained">MiNT NOW</Button>
       </Stack>
     </Box>
