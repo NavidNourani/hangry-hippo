@@ -1,3 +1,10 @@
+import { Stack } from "@mui/material";
+import BigBanner from "../src/components/shared/BigBanner";
+
 export default function Home() {
-  return <h1>Hi</h1>;
+  return (
+    <Stack>
+      <BigBanner />
+    </Stack>
+  );
 }
