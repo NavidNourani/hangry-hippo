@@ -97,7 +97,7 @@ const Team: FunctionComponent<Props> = ({}) => {
                   <TeamCard
                     name="Yuiila Tsurkan"
                     role={`Designer`}
-                    image="/images/monkey_2.png"
+                    image="/images/bfbb69a8-e33b-4c2c-8cbf-330368122a9b.jpeg"
                   />
                 </Box>
               </Grow>

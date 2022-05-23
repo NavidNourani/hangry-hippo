@@ -51,7 +51,7 @@ const Tools: FunctionComponent<Props> = ({}) => {
           >
             <ImageContainer order={1}>
               <Image
-                src="/images/tools/col3.png"
+                src="/images/tools/c3-3.png"
                 alt=""
                 objectFit="cover"
                 layout="fill"
@@ -59,7 +59,7 @@ const Tools: FunctionComponent<Props> = ({}) => {
             </ImageContainer>
             <ImageContainer order={0}>
               <Image
-                src="/images/tools/col2.png"
+                src="/images/tools/c2-2.png"
                 alt=""
                 objectFit="cover"
                 layout="fill"
@@ -68,7 +68,7 @@ const Tools: FunctionComponent<Props> = ({}) => {
 
             <ImageContainer order={-1}>
               <Image
-                src="/images/tools/col1.png"
+                src="/images/tools/c1-1.png"
                 alt=""
                 objectFit="cover"
                 layout="fill"

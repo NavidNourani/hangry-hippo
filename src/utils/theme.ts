@@ -35,6 +35,24 @@ export const themeOptions: ThemeOptions = {
       color: "#fff",
     },
     body1: {},
+    h1: {
+      fontWeight: 900,
+    },
+    h2: {
+      fontWeight: 900,
+    },
+    h3: {
+      fontWeight: 900,
+    },
+    h4: {
+      fontWeight: 700,
+    },
+    h5: {
+      fontWeight: 700,
+    },
+    h6: {
+      fontWeight: 700,
+    },
     caption: {
       color: "#637381",
     },
