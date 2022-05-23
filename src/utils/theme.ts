@@ -20,5 +20,8 @@ export const themeOptions: ThemeOptions = {
       color: "#fff",
     },
     body1: {},
+    caption: {
+      color: "#637381",
+    },
   },
 };

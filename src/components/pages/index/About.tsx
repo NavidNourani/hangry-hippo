@@ -1,19 +1,16 @@
 import { Box, Container, Stack, styled, Typography } from "@mui/material";
 import Image from "next/image";
 import React, { FunctionComponent } from "react";
+import { FullVhContainer } from "../../shared/FullVhContainer";
 interface Props {}
 
 const About: FunctionComponent<Props> = ({}) => {
   return (
-    <Box
-      minHeight="100vh"
-      width="100%"
-      sx={{ placeItems: "center", display: "flex" }}
-    >
+    <FullVhContainer>
       <Container sx={{ paddingBlock: "40px" }}>
         <Wrapper>
           <Stack justifyContent="center">
-            <Typography color="#637381" marginBottom="1rem">
+            <Typography variant="caption" marginBottom="1rem">
               ABOUT
             </Typography>
             <Typography variant="h4" marginBottom="0.5rem">
@@ -48,7 +45,7 @@ const About: FunctionComponent<Props> = ({}) => {
           </Box>
         </Wrapper>
       </Container>
-    </Box>
+    </FullVhContainer>
   );
 };
 

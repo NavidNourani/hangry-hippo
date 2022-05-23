@@ -16,13 +16,13 @@ const Tools: FunctionComponent<Props> = ({}) => {
       <Container>
         <Wrapper>
           <Stack>
-            <Typography marginBottom="0.5rem" color="#637381">
+            <Typography marginBottom="0.5rem" variant="caption">
               Unvieling
             </Typography>
             <Typography variant="h3" marginBottom="0.4rem">
               Sad Gurilla Tools
             </Typography>
-            <Typography marginBottom="1.5rem" color="#637381">
+            <Typography marginBottom="1.5rem" variant="caption">
               A PRIVATE TOOL FOR HIPPO HOLDERS
             </Typography>
             <Typography marginBottom="0.5rem" variant="h6">

@@ -22,7 +22,7 @@ const BigBanner: FunctionComponent<Props> = ({}) => {
       />
       <Stack position="relative" alignItems={"center"}>
         <Typography variant="h3" marginBottom="1rem">
-          Sad Gorilla
+          Sad Guerilla
         </Typography>
         <Typography marginBottom="2rem">A GANG OF HANGRY HIPPO NFTs</Typography>
         <Button variant="contained">MiNT NOW</Button>
