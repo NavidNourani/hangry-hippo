@@ -13,20 +13,14 @@ const About: FunctionComponent<Props> = ({}) => {
             <Typography variant="caption" marginBottom="1rem">
               ABOUT
             </Typography>
-            <Typography variant="h4" marginBottom="0.5rem">
-              5,555
-            </Typography>
             <Typography variant="h4" marginBottom="1.5rem">
-              Hangry Hippo NFTs
+              Welcome to the minting website for SadGorilla.
             </Typography>
             <Typography marginBottom="1.5rem">
-              Hangry Hippo is a collection of 5,555 3D NFTs unlocking access to
-              HANGRY.TOOLS. An exclusive utility coming soon to holders.
-            </Typography>
-            <Typography>
-              $30,000 + 10% of royalties forever benefit Charity Water – an
-              organization bringing clean, locally-sourced drinking water to
-              developing countries around the globe.
+              SadGorilla is a NFT project with an humanitarian focus and 30% of
+              the sales volume will be distributed between various foundations
+              like LoveUganda, MFT and others focus on indentured animals and
+              improving clean water access to rural communities in Uganda.
             </Typography>
           </Stack>
           <Box

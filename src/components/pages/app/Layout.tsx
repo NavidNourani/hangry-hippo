@@ -1,5 +1,4 @@
-import styled from "@emotion/styled";
-import { Instagram, Twitter } from "@mui/icons-material";
+import { Twitter } from "@mui/icons-material";
 import {
   AppBar,
   Box,
@@ -10,7 +9,9 @@ import {
   useScrollTrigger,
 } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 import React, { FunctionComponent } from "react";
+import { SvgContainer } from "../../shared/SvgContainer";
 import Discord from "/public/images/discord.svg";
 
 interface Props {
@@ -47,41 +48,30 @@ const Layout: FunctionComponent<Props> = ({ children }) => {
             />
           </Box>
           <Tooltip title="Discord">
-            <IconButton>
-              <LogoContainer color="white" size={1.5}>
-                <Discord />
-              </LogoContainer>
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="Instagram">
-            <IconButton>
-              <Instagram sx={{ color: "white" }} />
-            </IconButton>
+            <Link href="https://discord.gg/SadGorillanft">
+              <a>
+                <IconButton>
+                  <SvgContainer color="white" size={1.5}>
+                    <Discord />
+                  </SvgContainer>
+                </IconButton>
+              </a>
+            </Link>
           </Tooltip>
           <Tooltip title="Twitter">
-            <IconButton>
-              <Twitter sx={{ color: "white" }} />
-            </IconButton>
+            <Link href="https://twitter.com/SadGorillanft">
+              <a>
+                <IconButton>
+                  <Twitter sx={{ color: "white" }} />
+                </IconButton>
+              </a>
+            </Link>
           </Tooltip>
         </Toolbar>
       </AppBar>
-      <Stack height="5000px">{children}</Stack>
+      <Stack>{children}</Stack>
     </>
   );
 };
-
-const LogoContainer = styled(Box)((props: any) => ({
-  color: props.color ?? "white",
-  position: "relative",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  "& > *": {
-    padding: `${((props.size * 16) / 10).toFixed(0)}px`,
-    height: `${props.size}rem`,
-    width: `${props.size}rem`,
-    color: props.color,
-  },
-}));
 
 export default Layout;

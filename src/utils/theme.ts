@@ -4,15 +4,30 @@ export const themeOptions: ThemeOptions = {
   palette: {
     mode: "dark",
     primary: {
-      main: "#c93c01",
-    },
-    text: {
-      primary: "#00f",
-      secondary: "#f00",
+      main: "#919eabfc",
     },
     background: {
       default: "#161c24",
       paper: "#161c24",
+    },
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          fontWeight: "700",
+        },
+        contained: {
+          backgroundColor: "#c93c01",
+          color: "#fff",
+          ":hover": {
+            backgroundColor: "#982d00",
+          },
+        },
+        outlined: {
+          color: "#fff",
+        },
+      },
     },
   },
   typography: {

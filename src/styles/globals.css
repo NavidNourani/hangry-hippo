@@ -4,7 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    background-color: #000000;
+    background-color: #161c24;
     animation: all 5s ease-in-out;
 }
 
@@ -16,6 +16,7 @@ a {
 * {
   box-sizing: border-box;
   animation: all 0.5s ease-in-out;
+  scroll-behavior: smooth;
 }
 
 *::-webkit-scrollbar {

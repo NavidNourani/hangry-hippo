@@ -1,6 +1,16 @@
-import { Box, Container, Grow, Stack, styled, Typography } from "@mui/material";
+import { ChevronLeft, ChevronRight } from "@mui/icons-material";
+import {
+  Box,
+  Container,
+  Grow,
+  IconButton,
+  Stack,
+  styled,
+  Typography,
+} from "@mui/material";
 import React, { FunctionComponent, useRef, useState } from "react";
 import { FullVhContainer } from "../../shared/FullVhContainer";
+import TeamCard from "./team/TeamCard";
 interface Props {}
 
 const Team: FunctionComponent<Props> = ({}) => {
@@ -43,24 +53,55 @@ const Team: FunctionComponent<Props> = ({}) => {
       <Container>
         <Stack alignItems="center">
           <Typography variant="caption">TEAM</Typography>
-          <Typography variant="h4">Hangry Hippo Team</Typography>
-          <Box
-            display="flex"
-            flexDirection="row"
-            width="100%"
-            ref={scrollViewRef}
-            sx={{ overflowX: "scroll", scrollSnapType: "x mandatory" }}
-          >
-            {new Array(50).fill(1).map((_, index) => (
+          <Typography variant="h4" marginBottom="4rem">
+            Sad Gorilla Team
+          </Typography>
+          <Box position="relative" maxWidth="100%">
+            <FloatingIconButton onClick={scrollLeft}>
+              <ChevronLeft />
+            </FloatingIconButton>
+            <FloatingIconButton sx={{ right: 0 }} onClick={scrollRight}>
+              <ChevronRight />
+            </FloatingIconButton>
+            <Box
+              display="flex"
+              flexDirection="row"
+              width="100%"
+              ref={scrollViewRef}
+              sx={{
+                overflowX: "scroll",
+                scrollSnapType: "x mandatory",
+                "&>:not(:first-child)": { paddingLeft: "24px" },
+              }}
+            >
               <Grow
-                key={`member-${index}`}
                 in={isInView}
                 style={{ transformOrigin: "0 0 0" }}
-                {...(isInView ? { timeout: index * 1000 } : {})}
+                {...(isInView ? { timeout: 1 * 100 } : {})}
               >
-                <Box bgcolor="red" width="295px" height="385px"></Box>
+                <Box>
+                  <TeamCard
+                    name="T. Foss"
+                    role={`Creator`}
+                    image="/images/monkey_2.png"
+                  />
+                </Box>
               </Grow>
-            ))}
+
+              <Grow
+                in={isInView}
+                style={{ transformOrigin: "0 0 0" }}
+                {...(isInView ? { timeout: 1 * 100 } : {})}
+              >
+                <Box>
+                  <TeamCard
+                    name="Yuiila Tsurkan"
+                    role={`Designer`}
+                    image="/images/monkey_2.png"
+                  />
+                </Box>
+              </Grow>
+            </Box>
           </Box>
         </Stack>
       </Container>
@@ -68,12 +109,11 @@ const Team: FunctionComponent<Props> = ({}) => {
   );
 };
 
-const AdvisorsContainer = styled(Stack)`
-  flex-direction: row;
-  width: fit-content;
-  & > *:not(:first-of-type) {
-    margin-left: 22px;
-  }
-`;
+const FloatingIconButton = styled(IconButton)({
+  position: "absolute",
+  top: "50%",
+  transform: "translateY(-50%)",
+  zIndex: 10,
+});
 
 export default Team;

@@ -20,10 +20,10 @@ const Tools: FunctionComponent<Props> = ({}) => {
               Unvieling
             </Typography>
             <Typography variant="h3" marginBottom="0.4rem">
-              Sad Gurilla Tools
+              Sad Gorilla Tools
             </Typography>
             <Typography marginBottom="1.5rem" variant="caption">
-              A PRIVATE TOOL FOR HIPPO HOLDERS
+              A PRIVATE TOOL FOR Sad Gorilla HOLDERS
             </Typography>
             <Typography marginBottom="0.5rem" variant="h6">
               RARITY VISUALIZER
