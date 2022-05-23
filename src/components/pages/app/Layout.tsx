@@ -22,7 +22,6 @@ const Layout: FunctionComponent<Props> = ({ children }) => {
     threshold: 100,
     disableHysteresis: true,
   });
-  console.log("scrolled", scrolled);
   return (
     <>
       <AppBar
