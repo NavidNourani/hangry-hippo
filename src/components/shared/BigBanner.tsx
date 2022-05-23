@@ -1,9 +1,11 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Grow, Stack, Toolbar, Typography } from "@mui/material";
 import Image from "next/image";
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useState } from "react";
+import ReactSign from "react-sign";
 interface Props {}
 
 const BigBanner: FunctionComponent<Props> = ({}) => {
+  const [isIn, setIsIn] = useState(false);
   return (
     <Box
       width="100%"
@@ -13,19 +15,13 @@ const BigBanner: FunctionComponent<Props> = ({}) => {
       alignItems="center"
       justifyContent="center"
     >
-      {/* <Image
-        src="/images/monkey_2.png"
-        alt=""
-        layout="fill"
-        quality={100}
-        objectFit="cover"
-      /> */}
       <Stack
         position="relative"
         alignItems={"center"}
         width="100%"
         minHeight="100vh"
       >
+        <Toolbar />
         <Box
           marginBottom="2rem"
           borderRadius="20px"
@@ -42,25 +38,28 @@ const BigBanner: FunctionComponent<Props> = ({}) => {
             layout="fill"
           />
         </Box>
-        <Stack flex={1} alignItems="center" justifyContent="center">
-          <Typography variant="h3" marginBottom="1rem">
-            Sad Gorilla
-          </Typography>
-          <Typography marginBottom="2rem">
-            A GANG OF Sad Gorilla NFTs
-          </Typography>
-          <Button
-            variant="contained"
-            sx={{
-              marginBottom: "2rem",
-              paddingInline: "4rem",
-              boxShadow: "#e2e7eb91 0px 0px 22px",
-            }}
-            size="large"
-          >
-            MiNT NOW
-          </Button>
-        </Stack>
+        <ReactSign id="react-sign-big-banner" onEnter={() => setIsIn(true)} />
+        <Grow in={isIn} timeout={isIn ? 1000 : undefined}>
+          <Stack flex={1} alignItems="center" justifyContent="center">
+            <Typography variant="h3" marginBottom="1rem">
+              Sad Gorilla
+            </Typography>
+            <Typography marginBottom="2rem" fontWeight={"700"}>
+              A GANG OF Sad Gorilla NFTs
+            </Typography>
+            <Button
+              variant="contained"
+              sx={{
+                marginBottom: "2rem",
+                paddingInline: "4rem",
+                boxShadow: "#e2e7eb91 0px 0px 22px",
+              }}
+              size="large"
+            >
+              MiNT NOW
+            </Button>
+          </Stack>
+        </Grow>
         <Box position="relative" minHeight="300px" width="100%">
           <Image
             src="/images/gorilla_bord_.png"

@@ -1,14 +1,13 @@
 import { Twitter } from "@mui/icons-material";
 import {
   AppBar,
-  Box,
   IconButton,
   Stack,
   Toolbar,
   Tooltip,
+  Typography,
   useScrollTrigger,
 } from "@mui/material";
-import Image from "next/image";
 import Link from "next/link";
 import React, { FunctionComponent } from "react";
 import { SvgContainer } from "../../shared/SvgContainer";
@@ -31,22 +30,9 @@ const Layout: FunctionComponent<Props> = ({ children }) => {
         elevation={scrolled ? 4 : 0}
       >
         <Toolbar>
-          <Box
-            sx={{
-              flex: 1,
-              height: "15px",
-              width: "173px",
-              position: "relative",
-            }}
-          >
-            <Image
-              src="/images/logo_letters.png"
-              alt=""
-              layout="fill"
-              objectFit="contain"
-              objectPosition="left"
-            />
-          </Box>
+          <Typography variant="h4" fontWeight="900" sx={{ flex: "1" }}>
+            Sad Gorilla
+          </Typography>
           <Tooltip title="Discord">
             <Link href="https://discord.gg/SadGorillanft">
               <a>

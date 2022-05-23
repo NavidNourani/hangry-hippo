@@ -3077,10 +3077,10 @@ react-is@^17.0.2:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
-react-sign@^1.0.13:
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/react-sign/-/react-sign-1.0.13.tgz#f5852d600011f7a9a808b4f1ba567bcbaeb668a7"
-  integrity sha512-74ByR8ngR2LPenKtfhIAzR48SKh4/iNntA4B4TzsuQ0rdI4MWPLhtse2zNBX0gCvrZHcsPhTnWYSB6cus5tEYQ==
+react-sign@^1.0.14:
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/react-sign/-/react-sign-1.0.14.tgz#8d3371477fcb5e313191fc63438a4d8ed21935bf"
+  integrity sha512-w7siGe0NeYBy7BdGx9gw4/JVA22vK4679pxFg6oEmJnQkyfjYAuXoLg9ok1FHuN55PglJciEGI1/KD30bxpNHA==
   dependencies:
     uuid "^8.3.2"
 
