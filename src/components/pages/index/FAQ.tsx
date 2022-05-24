@@ -68,14 +68,6 @@ const FAQ: FunctionComponent<Props> = ({}) => {
               </Accordion>
               <Accordion>
                 <AccordionSummary expandIcon={<ExpandMore />}>
-                  <Typography>What blockchain are you operating on?</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>Ethereum.</Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion>
-                <AccordionSummary expandIcon={<ExpandMore />}>
                   <Typography>
                     How many Hangry Hippo NFTs will there be?
                   </Typography>

@@ -50,7 +50,7 @@ const About: FunctionComponent<Props> = ({}) => {
                 sx={{ aspectRatio: "1" }}
               >
                 <Image
-                  src="/images/about.png"
+                  src="/images/hands.jpg"
                   alt=""
                   layout="fill"
                   objectFit="cover"
