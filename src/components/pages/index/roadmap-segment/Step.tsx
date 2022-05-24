@@ -18,7 +18,7 @@ const Step: FunctionComponent<Props> = ({
     <Box
       className="RoadmapStep"
       display="grid"
-      gridTemplateColumns="1fr 12px 1fr"
+      gridTemplateColumns="1fr 12px minmax(auto,100%)"
       gap="16px"
     >
       <Box
@@ -26,7 +26,9 @@ const Step: FunctionComponent<Props> = ({
         justifyContent="flex-end"
         sx={{ placeItems: "center" }}
       >
-        {completed && <Typography variant="caption">COMPLETED</Typography>}
+        <Typography variant="caption" sx={{ opacity: completed ? 1 : 0 }}>
+          COMPLETED
+        </Typography>
       </Box>
       <Stack alignItems="center">
         <Box

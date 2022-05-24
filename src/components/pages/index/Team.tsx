@@ -9,12 +9,13 @@ import {
   Typography,
 } from "@mui/material";
 import React, { FunctionComponent, useRef, useState } from "react";
+import ReactSign from "react-sign";
 import { FullVhContainer } from "../../shared/FullVhContainer";
 import TeamCard from "./team/TeamCard";
 interface Props {}
 
 const Team: FunctionComponent<Props> = ({}) => {
-  const [isInView, setIsInView] = useState(true);
+  const [isInView, setIsInView] = useState(false);
   const scrollViewRef = useRef<HTMLDivElement>();
 
   const scrollRight = () => {
@@ -74,10 +75,14 @@ const Team: FunctionComponent<Props> = ({}) => {
                 "&>:not(:first-child)": { paddingLeft: "24px" },
               }}
             >
+              <ReactSign
+                id="reac-sign-team"
+                onEnter={() => setIsInView(true)}
+              />
               <Grow
                 in={isInView}
                 style={{ transformOrigin: "0 0 0" }}
-                {...(isInView ? { timeout: 1 * 100 } : {})}
+                {...(isInView ? { timeout: 0 } : {})}
               >
                 <Box>
                   <TeamCard
@@ -91,7 +96,7 @@ const Team: FunctionComponent<Props> = ({}) => {
               <Grow
                 in={isInView}
                 style={{ transformOrigin: "0 0 0" }}
-                {...(isInView ? { timeout: 1 * 100 } : {})}
+                {...(isInView ? { timeout: 1 * 1000 } : {})}
               >
                 <Box>
                   <TeamCard

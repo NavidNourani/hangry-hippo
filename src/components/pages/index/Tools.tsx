@@ -1,10 +1,12 @@
-import { Container, Stack, styled, Typography } from "@mui/material";
+import { Container, Grow, Stack, styled, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import Image from "next/image";
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useState } from "react";
+import ReactSign from "react-sign";
 interface Props {}
 
 const Tools: FunctionComponent<Props> = ({}) => {
+  const [isIn, setIsIn] = useState(false);
   return (
     <Box
       bgcolor="#1f262e"
@@ -15,33 +17,37 @@ const Tools: FunctionComponent<Props> = ({}) => {
     >
       <Container>
         <Wrapper>
-          <Stack>
-            <Typography marginBottom="0.5rem" variant="caption">
-              Unvieling
-            </Typography>
-            <Typography variant="h3" marginBottom="0.4rem">
-              Sad Gorilla Tools
-            </Typography>
-            <Typography marginBottom="1.5rem" variant="caption">
-              A PRIVATE TOOL FOR Sad Gorilla HOLDERS
-            </Typography>
-            <Typography marginBottom="0.5rem" variant="h6">
-              RARITY VISUALIZER
-            </Typography>
-            <Typography marginBottom="1.5rem" color="#919eab">
-              Take the labor and guesswork out of choosing your artwork. Sort
-              entire collections by rarity ranking with ease so you can curate
-              your wallet with higher long-term value.
-            </Typography>
-            <Typography marginBottom="0.5rem" variant="h6">
-              RARITY VISUALIZER
-            </Typography>
-            <Typography marginBottom="1.5rem" color="#919eab">
-              Take the labor and guesswork out of choosing your artwork. Sort
-              entire collections by rarity ranking with ease so you can curate
-              your wallet with higher long-term value.
-            </Typography>
-          </Stack>
+          <Grow in={isIn}>
+            <Stack>
+              <Typography marginBottom="0.5rem" variant="caption">
+                Unvieling
+              </Typography>
+              <Typography variant="h3" marginBottom="0.4rem">
+                Sad Gorilla Tools
+              </Typography>
+              <Typography marginBottom="1.5rem" variant="caption">
+                A PRIVATE TOOL FOR Sad Gorilla HOLDERS
+              </Typography>
+              <Typography marginBottom="0.5rem" variant="h6">
+                RARITY VISUALIZER
+              </Typography>
+              <Typography marginBottom="1.5rem" color="#919eab">
+                Take the labor and guesswork out of choosing your artwork. Sort
+                entire collections by rarity ranking with ease so you can curate
+                your wallet with higher long-term value.
+              </Typography>
+              <Typography marginBottom="0.5rem" variant="h6">
+                RARITY VISUALIZER
+              </Typography>
+              <Typography marginBottom="1.5rem" color="#919eab">
+                Take the labor and guesswork out of choosing your artwork. Sort
+                entire collections by rarity ranking with ease so you can curate
+                your wallet with higher long-term value.
+              </Typography>
+              <ReactSign id="react-sign" onEnter={() => setIsIn(true)} />
+            </Stack>
+          </Grow>
+
           <Box
             width="100%"
             height="590px"
@@ -49,7 +55,7 @@ const Tools: FunctionComponent<Props> = ({}) => {
             position="relative"
             sx={{ alignItems: "center", justifyContent: "center" }}
           >
-            <ImageContainer order={1}>
+            <ImageContainer order={isIn ? 1 : 0}>
               <Image
                 src="/images/tools/c3-3.png"
                 alt=""
@@ -66,7 +72,7 @@ const Tools: FunctionComponent<Props> = ({}) => {
               />
             </ImageContainer>
 
-            <ImageContainer order={-1}>
+            <ImageContainer order={isIn ? -1 : 0}>
               <Image
                 src="/images/tools/c1-1.png"
                 alt=""
@@ -110,6 +116,7 @@ const ImageContainer = styled(Box)(({ order }: { order: number }) => ({
     -1 * order * 50
   }px) scaleX(0.86) scaleY(1) skewX(0deg) skewY(8deg) translateZ(0px)`,
   boxShadow: "rgb(99 115 129 / 48%) 80px -40px 80px",
+  transition: "1s ease-in-out",
 }));
 
 export default Tools;

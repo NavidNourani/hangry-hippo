@@ -6,31 +6,37 @@ import {
   Box,
   Button,
   Container,
+  Grow,
   Stack,
   styled,
   Typography,
 } from "@mui/material";
 import Link from "next/link";
 import React, { FunctionComponent } from "react";
+import ReactSign from "react-sign";
 import { FullVhContainer } from "../../shared/FullVhContainer";
 import { SvgContainer } from "../../shared/SvgContainer";
 import Discord from "/public/images/discord.svg";
 interface Props {}
 
 const FAQ: FunctionComponent<Props> = ({}) => {
+  const [isInView, setIsInView] = React.useState(false);
   return (
     <FullVhContainer minHeight="100% !important" py="80px">
       <Container>
+        <ReactSign id="React-sign-FAQ" onEnter={() => setIsInView(true)} />
         <Stack alignItems="center">
           <TopSegment>
-            <Box display="flex" alignItems="center">
-              <Stack>
-                <Typography marginBottom="1rem" variant="caption">
-                  FAQS
-                </Typography>
-                <Typography variant="h4">Ask Mr.Gorilla</Typography>
-              </Stack>
-            </Box>
+            <Grow in={isInView}>
+              <Box display="flex" alignItems="center">
+                <Stack>
+                  <Typography marginBottom="1rem" variant="caption">
+                    FAQS
+                  </Typography>
+                  <Typography variant="h4">Ask Mr.Gorilla</Typography>
+                </Stack>
+              </Box>
+            </Grow>
             <Stack
               display="flex"
               sx={{
@@ -70,7 +76,9 @@ const FAQ: FunctionComponent<Props> = ({}) => {
               </Accordion>
               <Accordion>
                 <AccordionSummary expandIcon={<ExpandMore />}>
-                  <Typography>What blockchain are you operating on?</Typography>
+                  <Typography>
+                    How many Hangry Hippo NFTs will there be?
+                  </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>5,555</Typography>
@@ -78,23 +86,27 @@ const FAQ: FunctionComponent<Props> = ({}) => {
               </Accordion>
             </Stack>
           </TopSegment>
-          <Typography marginBottom="1.5rem" variant="h5">
-            Join The Discord Family
-          </Typography>
-          <Link href="https://discord.gg/SadGorillanft">
-            <a>
-              <Button
-                variant="outlined"
-                endIcon={
-                  <SvgContainer>
-                    <Discord />
-                  </SvgContainer>
-                }
-              >
-                Discord
-              </Button>
-            </a>
-          </Link>
+          <Grow in={isInView}>
+            <Stack alignItems="center">
+              <Typography marginBottom="1.5rem" variant="h5">
+                Join The Discord Family
+              </Typography>
+              <Link href="https://discord.gg/SadGorillanft">
+                <a>
+                  <Button
+                    variant="outlined"
+                    endIcon={
+                      <SvgContainer>
+                        <Discord />
+                      </SvgContainer>
+                    }
+                  >
+                    Discord
+                  </Button>
+                </a>
+              </Link>
+            </Stack>
+          </Grow>
         </Stack>
       </Container>
     </FullVhContainer>

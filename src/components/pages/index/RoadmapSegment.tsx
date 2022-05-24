@@ -1,12 +1,14 @@
-import { Container, Stack, Typography } from "@mui/material";
+import { Box, Container, Grow, Stack, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 import Image from "next/image";
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useState } from "react";
+import ReactSign from "react-sign";
 import { FullVhContainer } from "../../shared/FullVhContainer";
 import Step from "./roadmap-segment/Step";
 interface Props {}
 
 const RoadmapSegment: FunctionComponent<Props> = ({}) => {
+  const [isIn, setIsIn] = useState(false);
   return (
     <FullVhContainer sx={{ paddingBlock: "80px", position: "relative" }}>
       <StyledImage
@@ -30,28 +32,50 @@ const RoadmapSegment: FunctionComponent<Props> = ({}) => {
         <Typography variant="h4" marginBottom="1rem">
           Roadmap
         </Typography>
-        <Stack
-          sx={{
-            "&>:nth-of-type(2n)": {
-              direction: "rtl",
-              "*>p": { textAlign: "end", direction: "ltr" },
-            },
-          }}
-        >
-          <Step title="- NFT development " description=" " />
-          <Step title="- release of 900 NFTs for minting " description=" " />
-          <Step
-            title="- release of remaining 99 NFTs on OpenSea"
-            description=" "
-          />
-          <Step
-            title="- $distribution to selected foundations and organizations"
-            description=" "
-          />
-          <Step
-            title="- Showcase of randomly selected NFTs of the collection at physical art showings. "
-            description=" "
-          />
+        <ReactSign id="React-sign-roadmap" onEnter={() => setIsIn(true)} />
+        <Stack>
+          <Grow in={isIn} timeout={isIn ? 0 : undefined}>
+            <Box>
+              <Step title="- NFT development " description=" " />
+            </Box>
+          </Grow>
+          <Grow in={isIn} timeout={isIn ? 1000 : undefined}>
+            <Box>
+              <Step
+                title="- release of 999 unique NFTs collection for minting "
+                description=" "
+              />
+            </Box>
+          </Grow>
+          <Grow in={isIn} timeout={isIn ? 2000 : undefined}>
+            <Box>
+              <Step
+                title="- release of remaining 99 NFTs on OpenSea"
+                description=" "
+              />
+            </Box>
+          </Grow>
+          <Grow in={isIn} timeout={isIn ? 3000 : undefined}>
+            <Box>
+              <Step
+                title="- $distribution to selected foundations and organizations"
+                description=" "
+              />
+            </Box>
+          </Grow>
+          <Grow in={isIn} timeout={isIn ? 4000 : undefined}>
+            <Box>
+              <Step
+                title="- Showcase of randomly selected NFTs of the collection at physical art showings. "
+                description=" "
+              />
+            </Box>
+          </Grow>
+          <Grow in={isIn} timeout={isIn ? 5000 : undefined}>
+            <Box>
+              <Step title="- SAD token release on uniswap" description=" " />
+            </Box>
+          </Grow>
         </Stack>
       </Container>
     </FullVhContainer>
