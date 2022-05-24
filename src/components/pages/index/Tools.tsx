@@ -27,7 +27,7 @@ const Tools: FunctionComponent<Props> = ({}) => {
               </Typography>
               <Typography marginBottom="1.5rem" color="#919eab">
                 Sad Gorilla is a unique NFT project for many reasons. It’s an
-                very limited number of NFTs vs other project in the NFT space.
+                very limited number of NFTs vs other projects in the NFT space.
                 With only 999 NFTs you have an rare NFT with a much higher short
                 and long term value.
               </Typography>
