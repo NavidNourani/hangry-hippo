@@ -32,17 +32,8 @@ const Tools: FunctionComponent<Props> = ({}) => {
                 RARITY VISUALIZER
               </Typography>
               <Typography marginBottom="1.5rem" color="#919eab">
-                Take the labor and guesswork out of choosing your artwork. Sort
-                entire collections by rarity ranking with ease so you can curate
-                your wallet with higher long-term value.
-              </Typography>
-              <Typography marginBottom="0.5rem" variant="h6">
-                RARITY VISUALIZER
-              </Typography>
-              <Typography marginBottom="1.5rem" color="#919eab">
-                Take the labor and guesswork out of choosing your artwork. Sort
-                entire collections by rarity ranking with ease so you can curate
-                your wallet with higher long-term value.
+                999 unique NFTs Collection developed together with the female
+                Ukrainian designer Yuiila Tsurkan.
               </Typography>
               <ReactSign id="react-sign" onEnter={() => setIsIn(true)} />
             </Stack>
