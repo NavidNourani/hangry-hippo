@@ -26,10 +26,10 @@ const Tools: FunctionComponent<Props> = ({}) => {
                 why should I buy?
               </Typography>
               <Typography marginBottom="1.5rem" color="#919eab">
-                Text for why should I buy: Sad Gorilla is a unique NFT project
-                for many reasons. It’s an very limited number of NFTs vs other
-                project in the NFT space. With only 999 NFTs you have an rare
-                NFT with a much higher short and long term value.
+                Sad Gorilla is a unique NFT project for many reasons. It’s an
+                very limited number of NFTs vs other project in the NFT space.
+                With only 999 NFTs you have an rare NFT with a much higher short
+                and long term value.
               </Typography>
               <Typography marginBottom="1.5rem" color="#919eab">
                 There is only 333 NFTs per character and all are unique.
