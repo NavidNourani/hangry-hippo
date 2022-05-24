@@ -35,7 +35,7 @@ const About: FunctionComponent<Props> = ({}) => {
                 <Typography marginBottom="1.5rem">
                   SadGorilla is a NFT project with an humanitarian focus and 30%
                   of the sales volume will be distributed between various
-                  foundations like LoveUganda, MFT and others focus on
+                  foundations like LoveUganda, MFT and others focused on
                   indentured animals and improving clean water access to rural
                   communities in Uganda.
                 </Typography>

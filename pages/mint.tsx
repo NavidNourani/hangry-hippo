@@ -1,11 +1,13 @@
-import { Box, Button, Grow, Stack, Toolbar, Typography } from "@mui/material";
+import { Box, Grow, Stack, Toolbar, Typography } from "@mui/material";
 import Image from "next/image";
-import Link from "next/link";
-import { default as React, FunctionComponent, useState } from "react";
+import React, { FunctionComponent, useState } from "react";
 import ReactSign from "react-sign";
-interface Props {}
+import Actions from "../src/components/pages/mint/Actions";
+interface Props {
+  children: React.ReactNode;
+}
 
-const BigBanner: FunctionComponent<Props> = ({}) => {
+const Mint: FunctionComponent<Props> = ({ children }) => {
   const [isIn, setIsIn] = useState(false);
   return (
     <Box
@@ -42,27 +44,13 @@ const BigBanner: FunctionComponent<Props> = ({}) => {
         <ReactSign id="react-sign-big-banner" onEnter={() => setIsIn(true)} />
         <Grow in={isIn} timeout={isIn ? 1000 : undefined}>
           <Stack flex={1} alignItems="center" justifyContent="center">
-            <Typography variant="h3" marginBottom="1rem">
-              Sad Gorilla
+            <Typography variant="h5" marginBottom="1rem">
+              A GANG OF Sad Gorilla NFTs collection
             </Typography>
-            <Typography marginBottom="2rem">
-              A GANG OF Sad Gorilla NFTs
+            <Actions BusdAmount="0.8" />
+            <Typography variant="h6" marginBottom="1rem" marginTop="1rem">
+              REMAINING: 598
             </Typography>
-            <Link href="/mint">
-              <a>
-                <Button
-                  variant="contained"
-                  sx={{
-                    marginBottom: "2rem",
-                    paddingInline: "4rem",
-                    boxShadow: "#e2e7eb91 0px 0px 22px",
-                  }}
-                  size="large"
-                >
-                  MiNT NOW
-                </Button>
-              </a>
-            </Link>
           </Stack>
         </Grow>
         <Box position="relative" minHeight="300px" width="100%">
@@ -78,4 +66,4 @@ const BigBanner: FunctionComponent<Props> = ({}) => {
   );
 };
 
-export default BigBanner;
+export default Mint;
