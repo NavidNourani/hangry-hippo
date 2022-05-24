@@ -22,18 +22,27 @@ const Tools: FunctionComponent<Props> = ({}) => {
               <Typography marginBottom="0.5rem" variant="caption">
                 Unvieling
               </Typography>
-              <Typography variant="h3" marginBottom="0.4rem">
-                Sad Gorilla Tools
-              </Typography>
-              <Typography marginBottom="1.5rem" variant="caption">
-                A PRIVATE TOOL FOR Sad Gorilla HOLDERS
-              </Typography>
-              <Typography marginBottom="0.5rem" variant="h6">
-                RARITY VISUALIZER
+              <Typography variant="h4" marginBottom="1rem">
+                why should I buy?
               </Typography>
               <Typography marginBottom="1.5rem" color="#919eab">
-                999 unique NFTs Collection developed together with the female
-                Ukrainian designer Yuiila Tsurkan.
+                Text for why should I buy: Sad Gorilla is a unique NFT project
+                for many reasons. It’s an very limited number of NFTs vs other
+                project in the NFT space. With only 999 NFTs you have an rare
+                NFT with a much higher short and long term value.{" "}
+              </Typography>
+              <Typography marginBottom="1.5rem" color="#919eab">
+                There is only 333 NFTs per character and all are unique.
+              </Typography>
+              <Typography marginBottom="1.5rem" color="#919eab">
+                Sad Gorilla is giving back to the animals and people who needs
+                it the most. Silverback gorillas in Uganda and improved clean
+                water access for local people in the rural areas of Uganda
+                highland.
+              </Typography>
+              <Typography color="#919eab">
+                It’s important to support the locals in order for them help
+                protecting the very limited mountain gorillas.
               </Typography>
               <ReactSign id="react-sign" onEnter={() => setIsIn(true)} />
             </Stack>

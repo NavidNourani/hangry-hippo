@@ -46,8 +46,9 @@ const About: FunctionComponent<Props> = ({}) => {
                 position="relative"
                 width="100%"
                 height="100%"
-                margin="-30px"
-                sx={{ aspectRatio: "1" }}
+                borderRadius="30px"
+                overflow="hidden"
+                sx={{ aspectRatio: "5/3" }}
               >
                 <Image
                   src="/images/hands.jpg"
