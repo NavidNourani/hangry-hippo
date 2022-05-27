@@ -1,6 +1,6 @@
-import { Box, Grow, Stack, Toolbar, Typography } from "@mui/material";
+import { Box, Grow, Skeleton, Stack, Toolbar, Typography } from "@mui/material";
 import Image from "next/image";
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, useEffect, useState } from "react";
 import ReactSign from "react-sign";
 import Actions from "../src/components/pages/mint/Actions";
 interface Props {
@@ -9,6 +9,32 @@ interface Props {
 
 const Mint: FunctionComponent<Props> = ({ children }) => {
   const [isIn, setIsIn] = useState(false);
+  const [mintValue, setMinValue] = useState(undefined);
+
+  const getMintValue = async () => {
+    const res = await fetch("/api/mintValue");
+    const data = await res.json();
+    setMinValue(data.value);
+  };
+  const decMintValue = async () => {
+    const res = await fetch("/api/decMintValue", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ secret: "11_!Gorilla_sec" }),
+    });
+    const data = await res.json();
+    if (data.success) {
+      setMinValue(mintValue - 1);
+      await getMintValue();
+    }
+  };
+
+  useEffect(() => {
+    getMintValue();
+  }, []);
+
   return (
     <Box
       width="100%"
@@ -47,9 +73,17 @@ const Mint: FunctionComponent<Props> = ({ children }) => {
             <Typography variant="h5" marginBottom="1rem">
               A GANG OF Sad Gorilla NFTs collection
             </Typography>
-            <Actions BusdAmount="0.8" />
-            <Typography variant="h6" marginBottom="1rem" marginTop="1rem">
-              REMAINING: 598
+            <Actions BusdAmount="0.0999" onPurchase={() => decMintValue()} />
+            <Typography
+              sx={{ display: "flex", flexDirection: "row" }}
+              variant="h6"
+              marginBottom="1rem"
+              marginTop="1rem"
+            >
+              REMAINING:{" "}
+              <Box component="span" marginLeft="5px">
+                {mintValue ?? <Skeleton width="50px" variant="text" />}
+              </Box>
             </Typography>
           </Stack>
         </Grow>

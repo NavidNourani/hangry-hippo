@@ -16,12 +16,16 @@ import { changeNetwork } from "../../../utils/changeNetwork";
 
 interface Props {
   BusdAmount?: string;
+  onPurchase?: () => void;
 }
 
 const prefferedChainId =
   process.env.NEXT_PUBLIC_METAMASK_CHAIN === "main" ? "56" : "97";
 
-const Actions: FunctionComponent<Props> = ({ BusdAmount = "0.8" }) => {
+const Actions: FunctionComponent<Props> = ({
+  BusdAmount = "0.0999",
+  onPurchase,
+}) => {
   const router = useRouter();
   const justWhitelist = useMemo(() => {
     return router.pathname === "/privateSale";
@@ -118,31 +122,23 @@ const Actions: FunctionComponent<Props> = ({ BusdAmount = "0.8" }) => {
           params: [
             {
               from: accounts[0],
-              to: "0x8E1fAE3461A99086Bd63EF492f77eb7f409A5DD5",
+              to: "0x0be9D623ADE802625d3c7707563b55dA068ae502",
               value: web3.utils.toHex(web3.utils.toWei(BusdAmount, "ether")),
               gasLimit: web3.utils.toHex(21000),
               gasPrice: web3.utils.toHex(web3.utils.toWei("10", "gwei")),
             },
           ],
         })
-        .then((txHash: string) => console.log("tx hash: ", txHash))
+        .then((txHash: string) => {
+          console.log("tx hash: ", txHash);
+          onPurchase();
+        })
         .catch((error: any) => console.error);
     }
   };
   if (!walletAddress || currentNetwork !== prefferedChainId) {
     return (
       <>
-        {/* <AlertDialog
-          title="Important"
-          text="First install MetaMask!"
-          acceptText="Ok"
-          cancelText="Cancel"
-          onAccept={() =>
-            window.open("https://metamask.io/download/", "_blank")?.focus()
-          }
-          onClose={() => setShowDialog(undefined)}
-          open={showDialog === "INSTALL_METAMASK"}
-        /> */}
         <Button
           variant="contained"
           color="warning"
