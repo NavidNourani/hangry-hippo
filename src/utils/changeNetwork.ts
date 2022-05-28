@@ -1,7 +1,7 @@
 import { BinanceNetworks } from "./binanceNetworks";
 
 export const changeNetwork = async (
-  networkName: "main" | "test",
+  networkName: "ethMain" | "test" | "main",
   onError: (e: string) => void
 ) => {
   try {

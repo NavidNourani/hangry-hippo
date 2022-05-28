@@ -12,6 +12,7 @@ interface AddEthereumChainParameter {
 }
 
 export const BinanceNetworks: {
+  ethMain: AddEthereumChainParameter;
   main: AddEthereumChainParameter;
   test: AddEthereumChainParameter;
 } = {
@@ -59,5 +60,16 @@ export const BinanceNetworks: {
       decimals: 18,
     },
     chainId: `0x${Number(97).toString(16)}`,
+  },
+  ethMain: {
+    chainName: "Ethereum Mainnet",
+    rpcUrls: ["https://api.mycryptoapi.com/eth", "https://cloudflare-eth.com"],
+    nativeCurrency: {
+      name: "Ether",
+      symbol: "ETH",
+      decimals: 18,
+    },
+    chainId: `0x${Number(1).toString(16)}`,
+    blockExplorerUrls: ["https://etherscan.io"],
   },
 };
