@@ -2,6 +2,8 @@ import { Box, Grow, Skeleton, Stack, Toolbar, Typography } from "@mui/material";
 import Image from "next/image";
 import React, { FunctionComponent, useEffect, useState } from "react";
 import ReactSign from "react-sign";
+import web3 from "web3";
+import abiJson from "../src/data/contractABI.json";
 import Actions from "../src/components/pages/mint/Actions";
 interface Props {
   children: React.ReactNode;
@@ -12,23 +14,15 @@ const Mint: FunctionComponent<Props> = ({ children }) => {
   const [mintValue, setMinValue] = useState(undefined);
 
   const getMintValue = async () => {
-    const res = await fetch("/api/mintValue");
-    const data = await res.json();
-    setMinValue(data.value);
-  };
-  const decMintValue = async () => {
-    const res = await fetch("/api/decMintValue", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ secret: "11_!Gorilla_sec" }),
-    });
-    const data = await res.json();
-    if (data.success) {
-      setMinValue(mintValue - 1);
-      await getMintValue();
-    }
+    const web3Obj = new web3(
+      "https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161"
+    );
+    const contract = new web3Obj.eth.Contract(
+      abiJson.abi as any,
+      "0x5aDBE839ED0685cDA80F757F1A9AaA7Ad42b600a"
+    );
+    const total_supply = await contract.methods.totalSupply().call();
+    setMinValue(900-total_supply);
   };
 
   useEffect(() => {
